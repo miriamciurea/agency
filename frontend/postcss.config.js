@@ -1,4 +1,4 @@
-export default {
+emodule.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},

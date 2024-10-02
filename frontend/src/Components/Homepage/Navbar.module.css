@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+.button {
+  position: relative;
+  /* To position the text span */
+  overflow: hidden;
+  /* Prevents overflow */
+  display: inline-block;
+  /* Ensures padding and hover works as expected */
+  transition: color 0.3s ease;
+  /* Smooth transition for color */
+}
+
+.button {
+  transition: transform 0.2s ease, color 0.2s ease;
+  /* Smooth transition for transform and color */
+  min-width: 80px;
+  /* Set a minimum width for the buttons */
+}
+
+.button::after {
+  content: '';
+  /* Empty content for the pseudo-element */
+  position: absolute;
+  /* Position it relative to the button */
+  left: 50%;
+  /* Center it */
+  bottom: 0;
+  /* Position it at the bottom */
+  height: 2px;
+  /* Height of the underline */
+  width: 0;
+  /* Start width as 0 */
+  background-color: black;
+  /* Underline color */
+  transition: width 0.3s ease, left 0.3s ease;
+  /* Smooth transition */
+}
+
+/* Hover effect */
+.button:hover::after {
+  width: 100%;
+  /* Full width on hover */
+  left: 0;
+  /* Move to the left */
+}
+
+.button:hover {
+  color: #555;
+  /* Change text color on hover */
+}
