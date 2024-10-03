@@ -9,8 +9,8 @@ const Navbar = () => {
         const buttonX = rect.left + rect.width / 2;
         const buttonY = rect.top + rect.height / 2;
 
-        const deltaX = (clientX - buttonX) / 3; // Adjusted for a further movement effect
-        const deltaY = (clientY - buttonY) / 3; // Adjusted for a further movement effect
+        const deltaX = (clientX - buttonX) / 1; // Adjusted for a further movement effect
+        const deltaY = (clientY - buttonY) / 1; // Adjusted for a further movement effect
 
         button.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
     };

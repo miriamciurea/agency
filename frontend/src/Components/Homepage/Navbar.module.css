@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
-.button {
+@import url('https://fonts.googleapis.com/css2?family=Radley:wght@400&display=swap');.button {
   position: relative;
   /* To position the text span */
   overflow: hidden;
@@ -8,6 +7,8 @@
   /* Ensures padding and hover works as expected */
   transition: color 0.3s ease;
   /* Smooth transition for color */
+  font-family: 'Radley', serif;
+    /* Apply the Radley font */      /* Apply Rajdhani font */
 }
 
 .button {
