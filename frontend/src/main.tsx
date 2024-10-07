@@ -4,11 +4,12 @@ import './index.css'
 import '../src/Components/Homepage/Navbar.tsx'
 import Navbar from '../src/Components/Homepage/Navbar.tsx'
 import Hero from '../src/Components/Homepage/Hero.tsx'
+import Slider from './Components/Homepage/Slider.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Navbar />
     <Hero />
-
+    <Slider />
   </StrictMode>,
 )

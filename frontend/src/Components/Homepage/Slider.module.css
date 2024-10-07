@@ -1,0 +1,34 @@
+/* Container for the entire slider */
+.sliderContainer {
+  position: relative;
+  width: 100vw;
+  /* Full width of the viewport */
+  height: 150px;
+  /* Desired height */
+  overflow: hidden;
+  /* Hide overflow content */
+  display: flex;
+  justify-content: space-around;
+  /* Use space-around to space out elements */
+  align-items: center;
+  /* Center elements vertically */
+  background-color: #f0f0f0;
+  /* Light background for contrast */
+  padding: 0 5vw;
+  /* Add horizontal padding to center elements better */
+}
+
+/* Common styles for all text elements */
+.sliderText {
+  font-size: 80px;
+  /* Font size as requested */
+  font-weight: bold;
+  transition: transform 0.5s ease-in-out;
+  /* Smooth transition for text movement */
+  white-space: nowrap;
+  /* Prevent text wrapping */
+  flex: 0 0 auto;
+  /* Prevent text from shrinking or growing, keep its size */
+  margin: 0 10vw;
+  /* Increase margin between text elements */
+}
