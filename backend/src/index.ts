@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello, TypeScript with Node.js!');
+    res.send('Hello, backend here!');
 });
 
 // Starting the server
