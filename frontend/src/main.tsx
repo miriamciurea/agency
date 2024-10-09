@@ -5,11 +5,13 @@ import '../src/Components/Homepage/Navbar.tsx'
 import Navbar from '../src/Components/Homepage/Navbar.tsx'
 import Hero from '../src/Components/Homepage/Hero.tsx'
 import Slider from './Components/Homepage/Slider.tsx'
+import Statement from './Components/Homepage/Statement.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Navbar />
     <Hero />
     <Slider />
+    <Statement />
   </StrictMode>,
 )
