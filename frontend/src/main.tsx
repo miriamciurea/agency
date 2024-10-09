@@ -6,6 +6,8 @@ import Navbar from '../src/Components/Homepage/Navbar.tsx'
 import Hero from '../src/Components/Homepage/Hero.tsx'
 import Slider from './Components/Homepage/Slider.tsx'
 import Statement from './Components/Homepage/Statement.tsx'
+import WhatWeDo from './Components/Homepage/WhatWeDo.tsx'
+import AestheticsSection from './Components/Homepage/AestheticsSection.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -13,5 +15,8 @@ createRoot(document.getElementById('root')!).render(
     <Hero />
     <Slider />
     <Statement />
+    <WhatWeDo />
+    <AestheticsSection />
+
   </StrictMode>,
 )

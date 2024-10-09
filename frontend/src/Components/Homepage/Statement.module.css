@@ -1,0 +1,123 @@
+/* ===============================
+   CONTAINER STYLES
+   =============================== */
+.statementContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+
+/* ===============================
+   TEXT SECTION STYLES
+   =============================== */
+.textSection {
+  width: 60%;
+  color: #3a3a3a;
+}
+
+/* Title styling */
+.statementTitle {
+  font-family: 'Radley', serif;
+  /* Replace with 'Bradley Regular' if available */
+  font-size: 45px;
+  line-height: 1.75;
+  /* Increased line spacing */
+  letter-spacing: 0.5px;
+  /* Slightly increase letter spacing for readability */
+}
+
+/* Italic text styling */
+.italic {
+  font-style: italic;
+  font-weight: 100;
+  /* Set to 100 for thinnest font weight */
+  font-family: 'Roboto Thin', sans-serif;
+  /* Replace with a very thin font */
+}
+
+/* Highlight text styling for specific words */
+.highlight {
+  color: #6ab4ff;
+}
+
+/* Emphasis text styling */
+.emphasis {
+  color: #ff6a6a;
+}
+
+/* ===============================
+   CIRCLE SECTION STYLES
+   =============================== */
+.circleContainer {
+  position: relative;
+  width: 30%;
+  height: 400px;
+  /* Fixed height to control the circle's movement */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* Position the circle at the bottom initially */
+  background-image: url('https://images.unsplash.com/photo-1573165455938-c4ef66c107aa?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: 650px auto;
+  /* Set the background image size */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Prevent image repetition */
+}
+
+/* Circle styling */
+.movingCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Slightly transparent to show the background */
+  transition: transform 0.3s ease;
+}
+
+/* ===============================
+   RESPONSIVENESS AND UTILITY STYLES
+   =============================== */
+@media (max-width: 768px) {
+  .statementContainer {
+    flex-direction: column;
+    /* Stack items vertically on smaller screens */
+    text-align: center;
+    /* Center align text */
+    padding: 16px;
+    /* Reduce padding */
+  }
+
+  .textSection {
+    width: 100%;
+    /* Full width for text */
+    margin-bottom: 24px;
+    /* Add spacing between text and circle */
+  }
+
+  .circleContainer {
+    width: 100%;
+    /* Full width for circle container */
+  }
+
+  .statementTitle {
+    font-size: 32px;
+    /* Reduce title font size */
+    line-height: 1.75;
+    /* Consistent line spacing */
+  }
+
+  .movingCircle {
+    width: 120px;
+    /* Reduce circle size */
+    height: 120px;
+  }
+}
+
+/* Utility styles for hover and active states */
+.movingCircle:hover {
+  background-color: #ff6a6a;
+  /* Change color on hover */
+}
