@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
 const Statement: React.FC = () => {
-  const [isInView, setIsInView] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [circleInitialTop, setCircleInitialTop] = useState(0);
 
   const handleScroll = () => {
-    const circle = document.getElementById('moving-circle');
-    if (circle) {
-      const rect = circle.getBoundingClientRect();
-      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        setIsInView(true);
-      } else {
-        setIsInView(false);
-      }
-    }
+    setScrollY(window.scrollY);
   };
 
   useEffect(() => {
+    const circle = document.getElementById('moving-circle');
+    if (circle) {
+      // Save the initial top position of the circle
+      setCircleInitialTop(circle.getBoundingClientRect().top);
+    }
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -35,9 +34,10 @@ const Statement: React.FC = () => {
       <div className="relative w-3/12 flex justify-center items-center text-[#3A3A3A]">
         <div
           id="moving-circle"
-          className={`w-[96px] h-[96px] rounded-full bg-red-500 transition-transform duration-300 transform ${
-            isInView ? 'translate-x-full' : 'translate-x-0'
-          }`}
+          className="w-[150px] h-[150px] rounded-full bg-red-500 transition-transform duration-300"
+          style={{
+            transform: `translateY(${scrollY - circleInitialTop}px)`,
+          }}
         />
       </div>
     </div>
