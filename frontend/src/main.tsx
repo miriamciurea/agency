@@ -8,6 +8,8 @@ import Slider from './Components/Homepage/Slider.tsx'
 import Statement from './Components/Homepage/Statement.tsx'
 import WhatWeDo from './Components/Homepage/WhatWeDo.tsx'
 import AestheticsSection from './Components/Homepage/AestheticsSection.tsx'
+import PortfolioSection from './Components/Homepage/PortfolioSection.tsx'
+import CompaniesSection from './Components/Homepage/CompaniesSection.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -17,6 +19,8 @@ createRoot(document.getElementById('root')!).render(
     <Statement />
     <WhatWeDo />
     <AestheticsSection />
+    <PortfolioSection />
+    <CompaniesSection />
 
   </StrictMode>,
 )

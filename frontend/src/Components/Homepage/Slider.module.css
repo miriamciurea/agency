@@ -1,4 +1,6 @@
-/* Container for the entire slider */
+/* ===============================
+   SLIDER STYLES
+   =============================== */
 .sliderContainer {
   position: relative;
   width: 100vw;
@@ -8,27 +10,33 @@
   overflow: hidden;
   /* Hide overflow content */
   display: flex;
-  justify-content: space-around;
-  /* Use space-around to space out elements */
+  justify-content: center;
+  /* Center the slider content */
   align-items: center;
   /* Center elements vertically */
-  background-color: #f0f0f0;
   /* Light background for contrast */
-  padding: 0 5vw;
-  /* Add horizontal padding to center elements better */
+}
+
+/* Wrapper for all slider text */
+.sliderContent {
+  display: flex;
+  /* Arrange words horizontally in a row */
+  align-items: center;
+  /* Center items vertically */
+  transition: transform 0.5s ease-out;
+  /* Smooth movement for the entire block */
 }
 
 /* Common styles for all text elements */
 .sliderText {
   font-size: 80px;
-  /* Font size as requested */
+  /* Font size */
   font-weight: bold;
-  transition: transform 0.5s ease-in-out;
-  /* Smooth transition for text movement */
   white-space: nowrap;
   /* Prevent text wrapping */
   flex: 0 0 auto;
-  /* Prevent text from shrinking or growing, keep its size */
-  margin: 0 10vw;
-  /* Increase margin between text elements */
+  /* Prevent text from shrinking or growing */
+  margin: 0 1vw;
+  color: #ff6b6b;
+  /* Add spacing between text elements */
 }
