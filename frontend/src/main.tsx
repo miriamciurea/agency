@@ -10,6 +10,7 @@ import WhatWeDo from './Components/Homepage/WhatWeDo.tsx'
 import AestheticsSection from './Components/Homepage/AestheticsSection.tsx'
 import PortfolioSection from './Components/Homepage/PortfolioSection.tsx'
 import CompaniesSection from './Components/Homepage/CompaniesSection.tsx'
+import Footer from './Components/Homepage/Footer.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
     <AestheticsSection />
     <PortfolioSection />
     <CompaniesSection />
+    <Footer />
 
   </StrictMode>,
 )
