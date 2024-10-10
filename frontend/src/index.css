@@ -1,3 +1,23 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+:root {
+  --blue: #A1C6EA;
+  --bg: #EDEDED;
+  --pink: #FF6B6B;
+  --grey: #3A3A3A;
+}
+
+body {
+  color: var(--grey);
+  background-color: var(--bg);
+
+  .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--blue) !important;
+  }
+
+  .Mui-focused .MuiInputLabel-root {
+    color: var(--blue) !important;
+  }
+}
