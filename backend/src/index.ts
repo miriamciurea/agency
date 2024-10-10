@@ -1,7 +1,8 @@
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import contactRoutes from './routes/contact';
 
 dotenv.config();
 
@@ -11,19 +12,21 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const uri: string = process.env.MONGO_URI || "";
+// const uri: string = process.env.MONGO_URI || "";
 
 
-(async () => {
-    try {
-        await mongoose.connect(uri);
-        console.log('Connected to the database');
-    } catch(error) {
-        console.error(error);
-    }
-})();
+// (async () => {
+//     try {
+//         await mongoose.connect(uri);
+//         console.log('Connected to the database');
+//     } catch(error) {
+//         console.error(error);
+//     }
+// })();
 
-app.get('/health', (_req: Request, res: Response) => {
+app.use('/api', contactRoutes);
+
+app.get('/', (_req: Request, res: Response) => {
     res.status(200).send('Server is running');
 });
 
