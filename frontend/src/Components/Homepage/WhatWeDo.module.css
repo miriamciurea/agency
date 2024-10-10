@@ -1,0 +1,128 @@
+ .whatWeDoContainer {
+       display: flex;
+       /* Align items horizontally */
+       justify-content: space-between;
+       /* Space between text and circle */
+       align-items: center;
+       /* Center-align items vertically */
+       padding: 32px;
+       margin-top: 64px;
+       /* Add spacing between sections */
+       border-top: 1px solid #e0e0e0;
+       /* Optional: Add a top border to separate the sections */
+       position: relative;
+       /* Required for absolute positioning of cursor image */
+     }
+
+.textSection {
+  width: 60%;
+  color: #3a3a3a;
+  font-size: 64px;
+  font-family: radley, serif;
+}
+
+/* Section title styling */
+.sectionTitle {
+  font-family: 'Radley', serif; /* Use the same font as other titles */
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 24px; /* Spacing below the title */
+}
+
+/* Service list styling */
+/* ===============================
+   SERVICE LIST STYLES
+   =============================== */
+.serviceList {
+  list-style-type: none;
+  /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.serviceItem {
+  font-size: 55px;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  /* Space between list items */
+  position: relative;
+  padding-left: 24px;
+  /* Add left padding for custom bullet */
+  letter-spacing: 0.2cm;
+  transition: color 0.3s ease, transform 0.3s ease;
+  /* Smooth transition for color and transform */
+}
+
+/* Custom bullet point */
+.serviceItem::before {
+  content: '•';
+  /* Custom bullet point */
+  position: absolute;
+  left: 0;
+  font-size: 32px;
+  color: #6ab4ff;
+  /* Blue bullet color */
+}
+
+/* Hover Effect */
+.serviceItem:hover {
+  color: #ff6a6a;
+  /* Change text color to red on hover */
+  font-weight: bold;
+  /* Make text bold */
+  transform: scale(1.05);
+  /* Slightly scale the text on hover */
+  cursor: pointer;
+  /* Change cursor to pointer */
+}
+
+.serviceItem:hover::before {
+  color: #ff6a6a;
+  /* Change bullet color to match the text */
+}
+
+.rightCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ff6a6a;
+  transition: transform 0.3s ease;
+  display: flex;
+  /* Center the content inside */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  position: relative;
+  /* Required for absolute positioning of text */
+}
+
+.insideText {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  /* Position it inside the circle */
+  display: flex;
+  /* Center text */
+  justify-content: center;
+  /* Center text horizontally */
+  align-items: center;
+  /* Center text vertically */
+  text-align: center;
+  /* Ensure multi-line text is centered */
+}
+
+/* ===============================
+   CURSOR IMAGE STYLES
+   =============================== */
+.cursorImage {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  pointer-events: none;
+  /* Prevent the image from interfering with hover events */
+  z-index: 1000;
+  /* Ensure it appears above other elements */
+  display: block;
+}

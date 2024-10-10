@@ -1,0 +1,88 @@
+/* ===============================
+   AESTHETICS SECTION STYLES
+   =============================== */
+.aestheticsSectionContainer {
+  text-align: center;
+  margin: 50px 0;
+  /* Spacing around the section */
+}
+
+/* Title Styles */
+.aestheticsTitle {
+  font-size: 48px;
+  color: #ff6a6a;
+  /* Red color */
+  font-weight: bold;
+  margin-bottom: 40px;
+  position: relative;
+  /* Required for hover effect */
+  display: inline-block;
+  cursor: none;
+  padding-right: 30px;
+  /* Hide the cursor */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hovered Style */
+.hovered {
+  color: #ff3b3b;
+  /* Darker red on hover */
+  transform: scale(1.1);
+  /* Slightly scale up the text */
+}
+
+/* Custom Cursor Hover Effect */
+.aestheticsTitle::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ff6a6a;
+  transition: transform 0.1s ease;
+  transform: scale(0);
+}
+
+.aestheticsTitle:hover::before {
+  transform: scale(1);
+  /* Expand circle on hover */
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+  pointer-events: none;
+}
+
+/* ===============================
+   ICON CIRCLE STYLES
+   =============================== */
+.iconsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.iconCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ff6a6a;
+  /* Red background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.iconCircle:hover {
+  transform: scale(1.1);
+  /* Slightly enlarge on hover */
+  background-color: #ff3b3b;
+  /* Darker red on hover */
+}
+
+.icon {
+  color: white;
+  /* White icon color */
+  font-size: 32px;
+}
