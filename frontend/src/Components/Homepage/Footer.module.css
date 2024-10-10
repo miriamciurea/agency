@@ -1,0 +1,72 @@
+/* Footer.module.css */
+
+.footer {
+  background-color: #1e1e1e;
+  /* Dark background for contrast */
+  color: #ffffff;
+  /* Light text for readability */
+  padding: 40px 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.about,
+.links,
+.contact {
+  flex: 1;
+  margin: 20px;
+}
+
+h4 {
+  color: #00b4d8;
+  /* Accent color for headings */
+  margin-bottom: 10px;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin: 5px 0;
+}
+
+.links a {
+  color: #00b4d8;
+  /* MoonCode accent color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #90e0ef;
+  /* Lighter shade on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about,
+  .links,
+  .contact {
+    margin: 10px 0;
+  }
+}
