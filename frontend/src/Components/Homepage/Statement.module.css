@@ -1,6 +1,3 @@
-/* ===============================
-   CONTAINER STYLES
-   =============================== */
 .statementContainer {
   display: flex;
   justify-content: space-between;
@@ -8,42 +5,28 @@
   padding: 32px;
 }
 
-/* ===============================
-   TEXT SECTION STYLES
-   =============================== */
 .textSection {
   width: 60%;
-  color: #3a3a3a;
+  color: var(--grey);
 }
 
-/* Title styling */
 .statementTitle {
-  font-family: 'Radley', serif;
-  /* Replace with 'Bradley Regular' if available */
-  font-size: 45px;
+  font-size: 2.3rem;
   line-height: 1.75;
-  /* Increased line spacing */
   letter-spacing: 0.5px;
-  /* Slightly increase letter spacing for readability */
 }
 
-/* Italic text styling */
 .italic {
   font-style: italic;
   font-weight: 100;
-  /* Set to 100 for thinnest font weight */
-  font-family: 'Roboto Thin', sans-serif;
-  /* Replace with a very thin font */
 }
 
-/* Highlight text styling for specific words */
 .highlight {
-  color: #6ab4ff;
+  color: var(--blue);
 }
 
-/* Emphasis text styling */
 .emphasis {
-  color: #ff6a6a;
+  color: var(--pink);
 }
 
 /* ===============================
@@ -103,7 +86,7 @@
   }
 
   .statementTitle {
-    font-size: 32px;
+    font-size: 2rem;
     /* Reduce title font size */
     line-height: 1.75;
     /* Consistent line spacing */
@@ -118,6 +101,6 @@
 
 /* Utility styles for hover and active states */
 .movingCircle:hover {
-  background-color: #ff6a6a;
+  background-color: var(--pink);
   /* Change color on hover */
 }

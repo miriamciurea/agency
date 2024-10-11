@@ -1,17 +1,23 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
 
 :root {
   --blue: #A1C6EA;
   --bg: #EDEDED;
   --pink: #FF6B6B;
   --grey: #3A3A3A;
+
+  --crazy: 'Libre Baskerville';
+  --normal: 'Afacad Flux';
 }
 
 body {
   color: var(--grey);
   background-color: var(--bg);
+  font-family: var(--normal);
 
   .Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: var(--blue) !important;

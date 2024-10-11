@@ -1,42 +1,31 @@
-/* ===============================
-   SLIDER STYLES
-   =============================== */
 .sliderContainer {
   position: relative;
   width: 100vw;
-  /* Full width of the viewport */
-  height: 150px;
-  /* Desired height */
+  height: auto;
   overflow: hidden;
-  /* Hide overflow content */
   display: flex;
   justify-content: center;
-  /* Center the slider content */
   align-items: center;
-  /* Center elements vertically */
-  /* Light background for contrast */
 }
 
-/* Wrapper for all slider text */
 .sliderContent {
   display: flex;
-  /* Arrange words horizontally in a row */
   align-items: center;
-  /* Center items vertically */
   transition: transform 0.5s ease-out;
-  /* Smooth movement for the entire block */
 }
 
-/* Common styles for all text elements */
 .sliderText {
-  font-size: 80px;
-  /* Font size */
+  font-size: 4rem;
   font-weight: bold;
   white-space: nowrap;
-  /* Prevent text wrapping */
   flex: 0 0 auto;
-  /* Prevent text from shrinking or growing */
   margin: 0 1vw;
-  color: #ff6b6b;
-  /* Add spacing between text elements */
+  color: var(--pink);
+  font-family: var(--crazy);
+}
+
+@media (max-width: 640px) {
+  .sliderText {
+    font-size: 1.5rem;
+  }
 }

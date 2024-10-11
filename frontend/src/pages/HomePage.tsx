@@ -1,11 +1,21 @@
 import Hero from '../Components/Homepage/Hero';
-import Navbar from "../Components/Shared/Navbar";
+import Slider from "../Components/Homepage/Slider";
+import Statement from "../Components/Homepage/Statement";
+import What from "../Components/Homepage/WhatWeDo";
+import Aesthetics from "../Components/Homepage/AestheticsSection";
+import Portofolio from "../Components/Homepage/PortfolioSection";
+import Companies from "../Components/Homepage/CompaniesSection";
 
 const HomePage = () => {
   return (
     <>
-      <Navbar />
       <Hero />
+      <Slider />
+      <Statement />
+      <What />
+      <Aesthetics />
+      <Portofolio />
+      <Companies />
     </>
   );
 }
