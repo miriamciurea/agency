@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         {/* Logo */}
         <div className={styles.logo}>
-          <a href="#" className="text-2xl font-semibold text-black">MoonCode</a>
+          <a href="#" className="text-2xl font-semibold ">MoonCode</a>
         </div>
 
         {/* Navigation Links: Hidden on small screens, visible on medium screens and above */}
@@ -120,41 +120,41 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="#home"
-              className={`${styles.button} text-black px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
+              className={`${styles.button}  px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
               onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
               onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
             >
-              Home
+              HOME
             </a>
           </li>
           <li>
             <a
               href="#services"
-              className={`${styles.button} text-black px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
+              className={`${styles.button}  px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
               onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
               onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
             >
-              Services
+              SERVICES
             </a>
           </li>
           <li>
             <a
               href="#about"
-              className={`${styles.button} text-black px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
+              className={`${styles.button}  px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
               onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
               onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
             >
-              About
+              ABOUT
             </a>
           </li>
           <li>
             <a
               href="#contact"
-              className={`${styles.button} text-black px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
+              className={`${styles.button}  px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
               onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
               onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
             >
-              Contact
+              CONTACT
             </a>
           </li>
         </ul>
@@ -186,37 +186,37 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="#home"
-              className={`${styles.button} text-black px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
+              className={`${styles.button}  px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
               onClick={toggleSidebar} // Close sidebar on link click
             >
-              Home
+              HOME
             </a>
           </li>
           <li>
             <a
               href="#services"
-              className={`${styles.button} text-black px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
+              className={`${styles.button}  px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
               onClick={toggleSidebar} // Close sidebar on link click
             >
-              Services
+              SERVICES
             </a>
           </li>
           <li>
             <a
               href="#about"
-              className={`${styles.button} text-black px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
+              className={`${styles.button}  px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
               onClick={toggleSidebar} // Close sidebar on link click
             >
-              About
+              ABOUT
             </a>
           </li>
           <li>
             <a
               href="#contact"
-              className={`${styles.button} text-black px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
+              className={`${styles.button}  px-3 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
               onClick={toggleSidebar} // Close sidebar on link click
             >
-              Contact
+              CONTACT
             </a>
           </li>
         </ul>
