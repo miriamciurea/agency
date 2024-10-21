@@ -2,5 +2,14 @@
   "scripts": {
     "frontend": "cd frontend && npm run dev",
     "backend": "cd backend && npm run dev"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "framer-motion": "^11.11.9",
+    "gsap": "^3.12.5",
+    "react-lottie": "^1.2.4"
+  },
+  "devDependencies": {
+    "@types/react-lottie": "^1.2.10"
   }
 }
