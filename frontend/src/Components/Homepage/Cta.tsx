@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styles from './Cta.module.css';
 
 const Cta: React.FC = () => {
   const [circleLeftPosition, setCircleLeftPosition] = useState(0); // Initial position of the circle from the left
@@ -55,13 +54,17 @@ const Cta: React.FC = () => {
 
   return (
     <div ref={ctaRef} className="relative h-[70vh] flex flex-col items-center justify-center bg-[#1e1e1e]">
-      {/* Title */}
       <h2
-        className="text-3xl text-white mb-8 font-[100]"
+        className="absolute top-[10%] text-3xl text-[var(--bg)] mb-8"
         onMouseMove={handleMouseMove} // Pass only the event
         onMouseLeave={handleMouseLeave} // Pass only the event
+        style = {{
+          // fontFamily: "var(--crazy)",
+          fontWeight: "100"
+        }}
       >
-        Are you interested?
+        {/* Are you interested? */}
+        INTERESTED?
       </h2>
 
       {/* Fine Horizontal Line */}
@@ -90,33 +93,22 @@ const Cta: React.FC = () => {
       </button>
 
       {/* Buttons Below the Circle */}
-      <div className="mt-64 flex space-x-6">
+      <div className="absolute bottom-0 flex space-x-6 w-[100%] items-center justify-center">
         <button
           // className="bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 transition duration-200 relative overflow-hidden"
+          className="button w-[20%] text-[var(--bg)]"
           onMouseMove={handleMouseMove} // Apply effect to button
           onMouseLeave={handleMouseLeave} // Reset transform
         >
-          <span
-            onMouseMove={handleMouseMove} // Apply cursor-follow effect to text
-            onMouseLeave={handleMouseLeave} // Reset transform
-            // className="inline-block transition-transform duration-100 ease-linear"
-            className={styles.button}
-          ><span className={styles.span}></span>
             +40 731114916
-          </span>
         </button>
         <button
+          className="button w-[20%] text-[var(--bg)]"
           // className="bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 transition duration-200 relative overflow-hidden"
           onMouseMove={handleMouseMove} // Apply effect to button
           onMouseLeave={handleMouseLeave} // Reset transform
         >
-          <span
-            onMouseMove={handleMouseMove} // Apply cursor-follow effect to text
-            onMouseLeave={handleMouseLeave} // Reset transform
-            className="inline-block transition-transform duration-100 ease-linear"
-          >
             info@mooncode.com
-          </span>
         </button>
       </div>
     </div>
