@@ -30,6 +30,27 @@ const PortfolioSection: React.FC = () => {
   // State variables to track the scroll position
   const [scrollY, setScrollY] = useState(0);
 
+    // Function to handle mouse movement
+    const handleMouseMove = (e: React.MouseEvent<HTMLElement>, button: HTMLElement) => {
+      const { clientX, clientY } = e;
+      const rect = button.getBoundingClientRect();
+      const buttonX = rect.left + rect.width / 2;
+      const buttonY = rect.top + rect.height / 2;
+
+      // Use smaller movement delta for a more subtle effect
+      const deltaX = (clientX - buttonX) / 2; // Adjusted for a more subtle effect
+      const deltaY = (clientY - buttonY) / 2;
+
+      button.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+    };
+
+    // Reset button position when mouse leaves
+    const handleMouseLeave = (button: HTMLElement) => {
+      // button.style.transform = 'translate(0, 0)';
+      button.style.transition = 'transform 0.2s ease-out'; // Smooth reset
+      button.style.transform = 'translate(0, 0)';
+    };
+
   // Effect to add scroll listener and update scroll position
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +78,10 @@ const PortfolioSection: React.FC = () => {
        */}
 
       <div className="flex justify-center">
-        <div className={styles.button}>
+        <div className={styles.button}
+          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
+          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
+          >
           MORE WORK
         </div>
       </div>
