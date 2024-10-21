@@ -1,16 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import styles from './PortfolioSection.module.css';
+import one from '../../../public/images/1.png';
+import two from '../../../public/images/2.png';
+import three from '../../../public/images/3.png';
+import four from '../../../public/images/4.png';
+import five from '../../../public/images/5.png';
+import six from '../../../public/images/6.png';
+import seven from '../../../public/images/7.png';
+import eight from '../../../public/images/8.png';
 
 // Use provided Unsplash URLs to create an alternating pattern
 const unsplashImages = [
-  'https://images.unsplash.com/photo-1728399195162-81451ee77a6f?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1702571721508-65b390fc9c47?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  one,
+  two,
+  four,
+  three,
+  five,
+  eight,
+  seven,
+  six,
 ];
 
 // Create a list of 12 images alternating between the two URLs
-const projectImages = Array(12)
+const projectImages = Array(8)
   .fill(null)
-  .map((_, index) => unsplashImages[index % 2]);
+  .map((_, index) => unsplashImages[index]);
 
 const PortfolioSection: React.FC = () => {
   // State variables to track the scroll position
@@ -39,19 +53,27 @@ const PortfolioSection: React.FC = () => {
 
   return (
     <div className={styles.portfolioSectionContainer}>
-      {/* Portfolio Title */}
-      <h1 className={styles.portfolioTitle}>Portfolio</h1>
+      {/* <h1 className={`${styles.portfolioTitle} sectionTitle`}>more work button</h1>
+       */}
 
-      {/* Horizontal Scrollable Container */}
+      <div className="flex justify-center">
+        <div className={styles.button}>
+          MORE WORK
+        </div>
+      </div>
+
       <div className={styles.scrollContainer}>
-        {/* Top Row with dynamic transform */}
         <div
           className={`${styles.row} ${styles.topRow}`}
           style={{ transform: firstRowTransform }}
         >
-          {projectImages.slice(0, 6).map((image, index) => (
-            <div key={index} className={styles.projectItem}>
-              <img src={image} alt={`Project ${index + 1}`} className={styles.projectImage} />
+          {projectImages.slice(0, 4).map((image, index) => (
+            <div key={index}
+            className={styles.projectItem}
+            style ={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: "cover"
+            }} >
             </div>
           ))}
         </div>
@@ -61,9 +83,13 @@ const PortfolioSection: React.FC = () => {
           className={styles.row}
           style={{ transform: secondRowTransform }}
         >
-          {projectImages.slice(6).map((image, index) => (
-            <div key={index} className={styles.projectItem}>
-              <img src={image} alt={`Project ${index + 7}`} className={styles.projectImage} />
+          {projectImages.slice(4).map((image, index) => (
+            <div key={index}
+            className={styles.projectItem}
+            style ={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: "cover"
+            }} >
             </div>
           ))}
         </div>

@@ -13,6 +13,8 @@
 
   --crazy: 'Libre Baskerville';
   --normal: 'Afacad Flux';
+
+  --animation-fast: all .3s cubic-bezier(.7, 0, .3, 1);
 }
 
 body {
@@ -68,4 +70,12 @@ body {
 
 .button:hover {
   border: none;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 5%;
+  font-family: var(--crazy);
+  font-weight: 100;
 }
