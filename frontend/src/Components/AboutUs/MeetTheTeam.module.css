@@ -1,0 +1,36 @@
+.meet-the-team {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.team-member {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+h3 {
+  margin-top: 10px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+p {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #666;
+}
