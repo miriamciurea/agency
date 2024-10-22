@@ -75,3 +75,10 @@
   z-index: 1000;
   display: 0.9;
 }
+
+@media (max-width: 760px) {
+  .sectionTitle {
+    font-size: 2rem;
+
+  }
+}

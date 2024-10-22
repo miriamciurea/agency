@@ -65,44 +65,29 @@
 /* ===============================
    RESPONSIVENESS AND UTILITY STYLES
    =============================== */
-@media (max-width: 768px) {
-  .statementContainer {
-    flex-direction: column;
-    /* Stack items vertically on smaller screens */
-    text-align: center;
-    /* Center align text */
-    padding: 16px;
-    /* Reduce padding */
-  }
-
-  .textSection {
-    width: 100%;
-    /* Full width for text */
-    margin-bottom: 24px;
-    /* Add spacing between text and circle */
-  }
-
-  .circleContainer {
-    width: 100%;
-    /* Full width for circle container */
-  }
-
-  .statementTitle {
-    font-size: 2rem;
-    /* Reduce title font size */
-    line-height: 1.75;
-    /* Consistent line spacing */
-  }
-
-  .movingCircle {
-    width: 120px;
-    /* Reduce circle size */
-    height: 120px;
-  }
-}
 
 /* Utility styles for hover and active states */
 .movingCircle:hover {
   background-color: var(--pink);
   /* Change color on hover */
+}
+
+@media (max-width: 760px) {
+
+  /* .statementContainer {
+    display: flex;
+    flex-direction: column;
+  } */
+
+  .circleContainer {
+    display: none;
+  }
+
+  .statementTitle {
+    font-size: 1rem;
+  }
+
+  .textSection {
+    width: 100%;
+  }
 }
