@@ -1,77 +1,96 @@
-import React from 'react';
-import { Player } from '@lottiefiles/react-lottie-player';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-interface Step {
-  number: string;
-  title: string;
-  description: string;
-}
+// Import the local SVGs
+import QuarterMoon from '../../assets/quarter.svg';
+import ThreeMoon from '../../assets/three.svg';
+import FullMoon from '../../assets/full.svg';
+import DomainImage from '../../assets/domain.svg';
+import FixImage from '../../assets/fix.svg';
+import ResearchImage from '../../assets/research.svg';
+import DevImage from '../../assets/dev.svg';
 
-const steps: Step[] = [
+const steps = [
   {
     number: '01',
     title: 'Research and design',
     description: 'This involves understanding your needs to create tailored solutions. We build Figma designs that combine functionality and visual appeal for an exceptional user experience.',
+    imageUrl: ResearchImage,
   },
   {
     number: '02',
     title: 'Domain services',
     description: 'We turn designs into functional websites. We build robust, scalable applications using the latest technologies, ensuring seamless performance and reliability.',
+    imageUrl: DomainImage,
   },
   {
     number: '03',
-    title: 'Domain services',
+    title: 'Fix Services',
     description: 'In this stage we help you secure your online presence by registering and managing your domain names. We ensure your website is easily accessible and aligns with your brand.',
+    imageUrl: FixImage,
   },
   {
     number: '04',
-    title: 'Maintenance and support',
+    title: 'Development and support',
     description: 'We ensure your website runs smoothly and stays up-to-date. We provide ongoing assistance, performance monitoring, and updates to keep your site secure and efficient.',
+    imageUrl: DevImage,
   },
 ];
 
-const animationUrl = 'https://lottie.host/fa54b301-01df-44d1-8718-8af8fb14ea4f/pzxkdk9iRR.json';
+// Component for displaying moon phases with scroll-triggered sliding effect
+const MoonPhase = ({ src, top, left }: { src: string; top: string; left: string }) => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
+
+  return (
+    <motion.img
+      src={src}
+      alt="moon phase"
+      className="absolute opacity-50 z-[110]" // Moon is behind
+      style={{ top, left, width: '100px', height: '100px', y }}
+    />
+  );
+};
 
 const StepComponent: React.FC = () => {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    const checkIfTouchDevice = () => {
+      setIsTouchDevice(window.matchMedia('(hover: none)').matches);
+    };
+    checkIfTouchDevice(); // Check on component mount
+    window.addEventListener('resize', checkIfTouchDevice); // Listen for window resize events
+
+    return () => {
+      window.removeEventListener('resize', checkIfTouchDevice); // Cleanup event listener
+    };
+  }, []);
+
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center" style={{ backgroundColor: '#EDEDED' }}>
-      <h1 className="text-center text-4xl font-bold mb-12 z-10">
+    <div className="relative min-h-screen flex flex-col items-center justify-center " style={{ backgroundColor: '#EDEDED' }}>
+      <h1 className="text-center text-4xl font-bold mb-12 z-100 pt-9">
         Our Website Creation Process
       </h1>
 
-      {/* Floating Shapes for the Background */}
-      <motion.div
-        className="absolute w-24 h-24 bg-blue-300 rounded-full opacity-50"
-        style={{ top: '10%', left: '10%' }}
-        animate={{ y: [0, 20, 0], x: [0, -10, 0] }} // Floating animation
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-      ></motion.div>
-
-      <motion.div
-        className="absolute w-16 h-16 bg-red-300 rounded-full opacity-50"
-        style={{ top: '70%', left: '80%' }}
-        animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-      ></motion.div>
-
-      <motion.div
-        className="absolute w-20 h-20 bg-green-300 rounded-full opacity-50"
-        style={{ top: '40%', left: '50%' }}
-        animate={{ y: [0, 30, 0], x: [0, -15, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-      ></motion.div>
+      {/* Moon Phases with scroll-triggered sliding effect */}
+      <MoonPhase src={QuarterMoon} top="18%" left="20%" /> {/* Quarter Moon */}
+      <MoonPhase src={ThreeMoon} top="45%" left="40%" /> {/* Two-thirds Moon */}
+      <MoonPhase src={FullMoon} top="63%" left="60%" /> {/* Full Moon */}
 
       {/* Steps */}
-      {steps.map((step: Step, index: number) => (
+      {steps.map((step, index) => (
         <motion.div
           key={index}
-          className="step-container flex flex-col md:flex-row w-full max-w-7xl mb-16 shadow-lg p-8"
-          style={{ backgroundColor: '#EDEDED' }} // Matching div background to the page background
+          className="step-container flex flex-col md:flex-row w-full max-w-7xl mb-16 shadow-lg p-8 relative group z-10" // Adjust z-index to ensure divs are on top
+          style={{ backgroundColor: '#EDEDED' }}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: index * 0.2 }}
+          transition={{ duration: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
+          // Apply hover for web and tap for touch devices
+          whileHover={isTouchDevice ? {} : { scale: 1.05 }} // Scale only on web
+          whileTap={isTouchDevice ? { scale: 1.05 } : {}} // Tap scale for touch devices
         >
           {/* Step Content */}
           <motion.div
@@ -85,17 +104,17 @@ const StepComponent: React.FC = () => {
             <p className="text-gray-600">{step.description}</p>
           </motion.div>
 
+          {/* Step Image with Hover Effect */}
           <motion.div
             className="w-full md:w-1/3 flex items-center justify-center mt-8 md:mt-0"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.2, delay: 0 }}
           >
-            <Player
-              autoplay
-              loop={false}
-              src={animationUrl}
-              style={{ height: '200px', width: '200px' }}
+            <img
+              src={step.imageUrl}
+              alt={step.title}
+              className="w-48 h-48 object-contain grayscale opacity-100 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100" // Use group-hover for hover effect
             />
           </motion.div>
         </motion.div>
