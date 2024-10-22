@@ -4,7 +4,7 @@ import 'animate.css';
 import { useVisibilityAnimation } from '../hooks/useVisibilityAnimation';
 
 const CompaniesSection: React.FC = () => {
-  const { elementRef, isVisible } = useVisibilityAnimation('animate__fadeInUp', 0.2);
+  const { elementRef, isVisible } = useVisibilityAnimation('animate__fadeInUp', 0.1);
 
   return (
     <div
@@ -12,7 +12,7 @@ const CompaniesSection: React.FC = () => {
       className={`flex justify-center items-center gap-[5%] p-[5%] ${
         isVisible ? 'animate__animated animate__fadeInUp' : 'opacity-0'
       }`}
-      style={{ transition: 'opacity 0.5s ease-in-out' }}
+      style={{ transition: 'opacity 0.1s ease-in-out' }}
     >
       {/* Link to APT Telecommunications */}
       <a href="https://www.aptelecommunication.co.uk" target="_blank" rel="noopener noreferrer"

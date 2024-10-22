@@ -1,32 +1,99 @@
-.sliderContainer {
-  position: relative;
-  width: 100vw;
-  height: auto;
-  overflow: hidden;
+/* .sliderContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  overflow: hidden;
 }
 
-.sliderContent {
+.highwayBarrier {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.highwayLane {
   display: flex;
+  width: calc(180px * 10);
+  transition: transform 0.1s linear;
+  animation: scroll 25s linear infinite;
+  gap: 20px;
+}
+
+.highwayCar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
   align-items: center;
-  transition: transform 0.5s ease-out;
+  font-size: 7rem;
+  font-weight: 900;
+  gap: 20px;
 }
 
-.sliderText {
-  font-size: 5.1rem;
-  font-weight: bold;
-  white-space: nowrap;
-  flex: 0 0 auto;
-  margin: 0 1vw;
-  color: var(--pink);
-  font-family: var(--crazy);
-  padding: 10px;
-}
-
-@media (max-width: 640px) {
-  .sliderText {
-    font-size: 1.5rem;
+@keyframes scroll {
+  100% {
+    transform: translateX(calc(-180px * 5));
   }
+}
+
+.reverse .highway-lane {
+  animation: scroll-reverse 25s linear infinite;
+}
+
+@keyframes scroll-reverse {
+  100% {
+    transform: translateX(calc(180px * 5));
+  }
+} */
+
+.sliderContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.highwayBarrier {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.highwayLane {
+  display: flex;
+  width: calc(180px * 10); /* Adjust width based on number of items */
+  gap: 20px;
+  animation: scroll 25s linear infinite; /* Default scroll left */
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+  animation-play-state: running; /* Default running */
+
+}
+
+.highwayCar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 17rem;
+  font-weight: 900;
+  gap: 20px;
+}
+
+@keyframes scroll {
+  100% {
+    transform: translateX(calc(-180px * 5)); /* Move items left */
+  }
+}
+
+@keyframes scroll-reverse {
+  100% {
+    transform: translateX(calc(180px * 5)); /* Move items right */
+  }
+}
+
+.reverse {
+  animation: scroll-reverse 25s linear infinite;
+  animation-play-state: running;
+  transition: transform 0.5s ease-in-out;
 }
