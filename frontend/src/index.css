@@ -53,7 +53,7 @@ body {
   touch-action: manipulation;
   will-change: transform;
   font-family: var(--normal);
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
 }
 
 .button:disabled {
@@ -81,4 +81,14 @@ body {
   margin-bottom: 5%;
   font-family: var(--crazy);
   font-weight: 100;
+}
+
+.glass {
+  /* From https://css.glass */
+  background: rgba(255, 107, 107, 0.46);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border: 1px solid rgba(255, 107, 107, 0.18);
 }

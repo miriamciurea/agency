@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
 
         {/* Sidebar Toggle Button for small screens */}
         <button
-          className="md:hidden p-2 text-gray-700 hover:text-gray-900"
+          className="md:hidden p-2 text-gray-700 hover:text-gray-900 z-[100]"
           onClick={toggleSidebar}
         >
           <IoMoon size={28} />
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
 
       {/* Sidebar for Mobile Navigation */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-[100] ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
       >

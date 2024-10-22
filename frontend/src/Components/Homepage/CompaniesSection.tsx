@@ -1,16 +1,19 @@
-import React from 'react';
-// import styles from './CompaniesSection.module.css';
-
-// Import SVG logos (replace these with actual paths to your SVG logo files)
 import aptLogo from '../../assets/Apt.png'; // Ensure the path is correct
 import dnnLogo from '../../assets/DNNovation.png';
+import 'animate.css';
+import { useVisibilityAnimation } from '../hooks/useVisibilityAnimation';
 
 const CompaniesSection: React.FC = () => {
-  // List of company logos
-  // const companyLogos = [aptLogo, dnnLogo];
+  const { elementRef, isVisible } = useVisibilityAnimation('animate__fadeInUp', 0.1);
 
   return (
-    <div className="flex justify-center items-center gap-[5%] p-[5%]">
+    <div
+      ref={elementRef}
+      className={`flex justify-center items-center gap-[5%] p-[5%] ${
+        isVisible ? 'animate__animated animate__fadeInUp' : 'opacity-0'
+      }`}
+      style={{ transition: 'opacity 0.1s ease-in-out' }}
+    >
       {/* Link to APT Telecommunications */}
       <a href="https://www.aptelecommunication.co.uk" target="_blank" rel="noopener noreferrer"
       className="transform transition-transform duration-300 hover:scale-110 hover:opacity-80">
