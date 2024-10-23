@@ -1,10 +1,9 @@
 import React from 'react';
+import { motion, useTransform, useScroll } from 'framer-motion';
 import andreiImage from '../../assets/andrei.png';
 import serbanImage from '../../assets/serban.jpeg';
 import miriamImage from '../../assets/miriam.jpeg';
-
-// Online icon imports
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'; // Using react-icons
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 interface TeamMember {
   name: string;
@@ -46,19 +45,52 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
+const cardVariants = {
+  hiddenLeft: { opacity: 0, x: -100 },
+  hiddenBottom: { opacity: 0, y: 100 },
+  hiddenRight: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, x: 0, y: 0, transition: { duration: 0.8 } }
+};
+
 const MeetTheTeam: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const yPosAnim = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16" style={{ backgroundColor: '#EDEDED' }}>
-      <h2 className="text-5xl font-bold mb-16 text-center" style={{ fontFamily: 'Orbitron', color: '#333' }}>
+      {/* Title */}
+      <motion.h2
+        className="text-7xl font-light mb-6 text-center"
+        style={{
+          fontFamily: 'Orbitron',
+          color: '#333',
+          y: yPosAnim,
+        }}
+      >
         Meet the Team
-      </h2>
+      </motion.h2>
+
+
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-7xl">
         {teamMembers.map((member, index) => (
-          <div
+          <motion.div
             key={index}
             className="team-member-card flex flex-col items-center relative group shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105"
-            style={{ height: '500px' }} // Increased height for the card
+            style={{ height: '400px' }}
+            variants={cardVariants}
+            initial={
+              index === 0
+                ? 'hiddenLeft'
+                : index === 1
+                ? 'hiddenBottom'
+                : 'hiddenRight'
+            }
+            whileInView="visible"
+            exit="hidden"
+            transition={{ duration: 0.5, delay: index * 0.3 }}
+            viewport={{ once: false, amount: 0.3 }} // Trigger animation at 30% in viewport
           >
             {/* Full-width Image with fixed height */}
             <div className="w-full h-96 overflow-hidden">
@@ -85,20 +117,19 @@ const MeetTheTeam: React.FC = () => {
             {/* Hover Overlay with Description and Icons */}
             <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6">
               <p className="mb-4 text-lg px-4">{member.description}</p>
-              {/* Social Links */}
               <div className="flex space-x-6 justify-center mt-4">
-                <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+                <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" className="hover:text-gray-400" title={`${member.name}'s LinkedIn`}>
                   <FaLinkedin className="fa-2x" />
                 </a>
-                <a href={member.github} target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+                <a href={member.github} target="_blank" rel="noopener noreferrer" className="hover:text-gray-400" title={`${member.name}'s GitHub`}>
                   <FaGithub className="fa-2x" />
                 </a>
-                <a href={`mailto:${member.email}`} className="hover:text-gray-400">
+                <a href={`mailto:${member.email}`} className="hover:text-gray-400" title={`Email ${member.name}`}>
                   <FaEnvelope className="fa-2x" />
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

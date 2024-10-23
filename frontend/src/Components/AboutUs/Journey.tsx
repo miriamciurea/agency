@@ -1,56 +1,41 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-// Import the local SVGs
-import QuarterMoon from '../../assets/quarter.svg';
-import ThreeMoon from '../../assets/three.svg';
-import FullMoon from '../../assets/full.svg';
-import DomainImage from '../../assets/domain.svg';
-import FixImage from '../../assets/fix.svg';
-import ResearchImage from '../../assets/research.svg';
-import DevImage from '../../assets/dev.svg';
+// URLs for Unsplash images (replace SVGs)
+const unsplashImages = [
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=3006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80&w=2825&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1520583457224-aee11bad5112?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+];
 
+// Step data with Unsplash image URLs
 const steps = [
   {
     number: '01',
-    title: 'Research and design',
+    title: 'Research and Design',
     description: 'This involves understanding your needs to create tailored solutions. We build Figma designs that combine functionality and visual appeal for an exceptional user experience.',
-    imageUrl: ResearchImage,
+    imageUrl: unsplashImages[0],
   },
   {
     number: '02',
-    title: 'Domain services',
+    title: 'Domain Services',
     description: 'We turn designs into functional websites. We build robust, scalable applications using the latest technologies, ensuring seamless performance and reliability.',
-    imageUrl: DomainImage,
+    imageUrl: unsplashImages[1],
   },
   {
     number: '03',
     title: 'Fix Services',
     description: 'In this stage we help you secure your online presence by registering and managing your domain names. We ensure your website is easily accessible and aligns with your brand.',
-    imageUrl: FixImage,
+    imageUrl: unsplashImages[2],
   },
   {
     number: '04',
-    title: 'Development and support',
+    title: 'Development and Support',
     description: 'We ensure your website runs smoothly and stays up-to-date. We provide ongoing assistance, performance monitoring, and updates to keep your site secure and efficient.',
-    imageUrl: DevImage,
+    imageUrl: unsplashImages[3],
   },
 ];
-
-// Component for displaying moon phases with scroll-triggered sliding effect
-const MoonPhase = ({ src, top, left }: { src: string; top: string; left: string }) => {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
-
-  return (
-    <motion.img
-      src={src}
-      alt="moon phase"
-      className="absolute opacity-50 z-[110]" // Moon is behind
-      style={{ top, left, width: '100px', height: '100px', y }}
-    />
-  );
-};
 
 const StepComponent: React.FC = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -59,38 +44,32 @@ const StepComponent: React.FC = () => {
     const checkIfTouchDevice = () => {
       setIsTouchDevice(window.matchMedia('(hover: none)').matches);
     };
-    checkIfTouchDevice(); // Check on component mount
-    window.addEventListener('resize', checkIfTouchDevice); // Listen for window resize events
+    checkIfTouchDevice();
+    window.addEventListener('resize', checkIfTouchDevice);
 
     return () => {
-      window.removeEventListener('resize', checkIfTouchDevice); // Cleanup event listener
+      window.removeEventListener('resize', checkIfTouchDevice);
     };
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center " style={{ backgroundColor: '#EDEDED' }}>
+    <div className="relative min-h-screen flex flex-col items-center justify-center" style={{ backgroundColor: '#EDEDED' }}>
       <h1 className="text-center text-4xl font-bold mb-12 z-100 pt-9">
         Our Website Creation Process
       </h1>
-
-      {/* Moon Phases with scroll-triggered sliding effect */}
-      <MoonPhase src={QuarterMoon} top="18%" left="20%" /> {/* Quarter Moon */}
-      <MoonPhase src={ThreeMoon} top="45%" left="40%" /> {/* Two-thirds Moon */}
-      <MoonPhase src={FullMoon} top="63%" left="60%" /> {/* Full Moon */}
 
       {/* Steps */}
       {steps.map((step, index) => (
         <motion.div
           key={index}
-          className="step-container flex flex-col md:flex-row w-full max-w-7xl mb-16 shadow-lg p-8 relative group z-10" // Adjust z-index to ensure divs are on top
+          className="step-container flex flex-col md:flex-row w-full max-w-7xl mb-16 shadow-lg p-8 relative group z-10"
           style={{ backgroundColor: '#EDEDED' }}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
-          // Apply hover for web and tap for touch devices
-          whileHover={isTouchDevice ? {} : { scale: 1.05 }} // Scale only on web
-          whileTap={isTouchDevice ? { scale: 1.05 } : {}} // Tap scale for touch devices
+          whileHover={isTouchDevice ? {} : { scale: 1.05 }}
+          whileTap={isTouchDevice ? { scale: 1.05 } : {}}
         >
           {/* Step Content */}
           <motion.div
@@ -104,7 +83,7 @@ const StepComponent: React.FC = () => {
             <p className="text-gray-600">{step.description}</p>
           </motion.div>
 
-          {/* Step Image with Hover Effect */}
+          {/* Step Image (Filter removed) */}
           <motion.div
             className="w-full md:w-1/3 flex items-center justify-center mt-8 md:mt-0"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -114,7 +93,7 @@ const StepComponent: React.FC = () => {
             <img
               src={step.imageUrl}
               alt={step.title}
-              className="w-48 h-48 object-contain grayscale opacity-100 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100" // Use group-hover for hover effect
+              className="w-[200px] h-[200px] object-cover transition-all duration-500"
             />
           </motion.div>
         </motion.div>
