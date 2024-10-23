@@ -72,10 +72,9 @@ const Cta: React.FC = () => {
 
       {/* Moving Circle that follows the cursor */}
       <button
-        className="absolute bg-[#FF6B6B] rounded-full text-white font-bold flex items-center justify-center shadow-lg transition-transform duration-100 ease-linear"
+        className="w-[150px] h-[150px] md:w-[250px] md:h-[250px] md:absolute bg-[#FF6B6B] rounded-full text-[var(--bg)] flex items-center justify-center shadow-lg transition-transform duration-100 ease-linear
+                  "
         style={{
-          width: '250px',
-          height: '250px',
           left: `calc(50% - 125px + ${circleLeftPosition}px)`, // Center the circle on the line and move based on scroll
           top: `calc(50% - 125px)`, // Keep the circle vertically centered
           transform: 'translate(0, 0)', // Ensure no additional transform is applied initially
@@ -86,24 +85,30 @@ const Cta: React.FC = () => {
         <span
           onMouseMove={handleMouseMove} // Apply cursor-follow effect to text
           onMouseLeave={handleMouseLeave} // Reset transform
-          className="inline-block transition-transform duration-100 ease-linear font-[100] text-[1.2rem]"
+          className="text-[1rem] inline-block transition-transform duration-100 ease-linear font-[600]
+                      md:text-[1.2rem]"
         >
           CONTACT US
         </span>
       </button>
 
       {/* Buttons Below the Circle */}
-      <div className="absolute bottom-0 flex space-x-6 w-[100%] items-center justify-center">
+      <div className="absolute bottom-0 flex w-[100%] items-center justify-center
+                      flex-col md:flex-row gap-[15px]
+      ">
         <button
           // className="bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 transition duration-200 relative overflow-hidden"
-          className="button w-[20%] text-[var(--bg)]"
+          className="button text-[var(--bg)]
+                      md:w-[20%] w-[50%]
+                      mt-10"
           onMouseMove={handleMouseMove} // Apply effect to button
           onMouseLeave={handleMouseLeave} // Reset transform
         >
             +40 731114916
         </button>
         <button
-          className="button w-[20%] text-[var(--bg)]"
+          className="button text-[var(--bg)]
+                    md:w-[20%] w-[50%] m-0"
           // className="bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 transition duration-200 relative overflow-hidden"
           onMouseMove={handleMouseMove} // Apply effect to button
           onMouseLeave={handleMouseLeave} // Reset transform
