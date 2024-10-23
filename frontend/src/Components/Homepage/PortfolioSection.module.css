@@ -95,3 +95,13 @@
   box-shadow: none;
   transform: translateY(0);
 }
+
+@media (max-width: 760px) {
+  .button {
+    width: 50%;
+  }
+
+  .scrollContainer {
+    display: none;
+  }
+}

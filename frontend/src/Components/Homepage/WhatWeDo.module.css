@@ -75,3 +75,26 @@
   z-index: 1000;
   display: 0.9;
 }
+
+@media (max-width: 760px) {
+  .sectionTitle {
+    font-size: 2rem;
+
+  }
+
+  .serviceItem {
+    line-height: 2;
+    flex-direction: column;
+    align-items: baseline;
+
+  }
+
+  .serviceDescription {
+    font-size: 1rem;
+    color: var(--grey);
+  }
+
+  .serviceName {
+    font-size: 2rem;
+  }
+}

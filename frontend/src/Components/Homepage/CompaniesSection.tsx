@@ -18,20 +18,20 @@ const CompaniesSection: React.FC = () => {
       <a href="https://www.aptelecommunication.co.uk" target="_blank" rel="noopener noreferrer"
       className="transform transition-transform duration-300 hover:scale-110 hover:opacity-80">
         <div
-          className="h-[100px] w-[100px] bg-no-repeat bg-center bg-contain"
+          className="w-[65px] h-[100px] md:w-[100px] bg-no-repeat bg-center bg-contain"
           style={{
             backgroundImage: `url(${aptLogo})`
           }}
         ></div>
       </a>
 
-      <div className="" style={{ fontFamily: "var(--crazy)" }}>TRUSTED BY</div>
+      <div className="text-[0.8rem] text-center md:text-[1rem]" style={{ fontFamily: "var(--crazy)" }}>TRUSTED BY</div>
 
       {/* Link to DNNovation Construction */}
       <a href="https://www.dnnovationconstruction.co.uk" target="_blank" rel="noopener noreferrer"
       className="transform transition-transform duration-300 hover:scale-110 hover:opacity-80">
         <div
-          className="h-[100px] w-[100px] bg-no-repeat bg-center bg-contain"
+          className="w-[65px] h-[100px] md:w-[100px] bg-no-repeat bg-center bg-contain"
           style={{
             backgroundImage: `url(${dnnLogo})`
           }}
