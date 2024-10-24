@@ -2,10 +2,10 @@ import Hero from '../Components/Homepage/Hero';
 import Slider from "../Components/Homepage/Slider";
 import Statement from "../Components/Homepage/Statement";
 import What from "../Components/Homepage/WhatWeDo";
-import Aesthetics from "../Components/Homepage/AestheticsSection";
+// import Aesthetics from "../Components/Homepage/AestheticsSection";
 import Portofolio from "../Components/Homepage/PortfolioSection";
 import Companies from "../Components/Homepage/CompaniesSection";
-import Cta from '../Components/Homepage/Cta';
+// import Cta from '../Components/Homepage/Cta';
 
 const HomePage = () => {
   return (
@@ -14,10 +14,10 @@ const HomePage = () => {
       <Slider />
       <Statement />
       <What />
-      <Aesthetics />
+      {/* <Aesthetics /> */}
       <Portofolio />
       <Companies />
-      <Cta />
+      {/* <Cta /> */}
     </>
   );
 }

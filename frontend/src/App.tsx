@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import Navbar from "../src/Components/Shared/Navbar";
-import Footer from "../src/Components/Shared/Footer";
+import Footer1 from "../src/Components/Shared/Footer1";
 import AboutUs from './pages/AboutUs';
 // import AboutPage from './pages/AboutPage';
 // import NotFoundPage from './pages/NotFoundPage';
@@ -20,7 +20,7 @@ const App: React.FC = () => {
         {/* <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>
-      <Footer />
+      <Footer1 />
       </>
   );
 };
