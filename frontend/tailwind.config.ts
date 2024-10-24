@@ -4,7 +4,17 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}", // Adjust based on your project structure
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        crazy: 'var(--crazy)',
+      },
+      colors: {
+        grey: 'var(--grey)',
+        pink: 'var(--pink)',
+        blue: 'var(--blue)',
+        white: 'var(--bg)',
+      }
+    },
   },
   plugins: [],
 }
