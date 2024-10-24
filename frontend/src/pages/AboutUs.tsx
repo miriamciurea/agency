@@ -1,18 +1,20 @@
-// import AboutSection from '../Components/AboutUs/History';
 import HeroAbout from '../Components/AboutUs/HeroAbout';
 import StepComponent from '../Components/AboutUs/Journey';
 import MeetTheTeam from '../Components/AboutUs/MeetTheTeam';
 import SliderAbout from '../Components/AboutUs/SliderAbout';
-// import History from '../Components/AboutUs/History';
-
+import { useRef } from 'react';
 
 const AboutUs: React.FC = () => {
+  const meetTheTeamRef = useRef<HTMLDivElement>(null); // Reference for MeetTheTeam section
+
   return (
     <>
-      <HeroAbout />
+      <HeroAbout meetTheTeamRef={meetTheTeamRef} /> {/* Pass ref to HeroAbout */}
       <SliderAbout />
       <StepComponent />
-      <MeetTheTeam />
+      <div ref={meetTheTeamRef}> {/* Attach the ref to this div wrapping MeetTheTeam */}
+        <MeetTheTeam />
+      </div>
       {/* <History  /> */}
     </>
   );
