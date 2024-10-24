@@ -4,38 +4,39 @@ import { motion } from 'framer-motion';
 // URLs for Unsplash images (replace SVGs)
 const unsplashImages = [
   "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=3006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80&w=2825&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1520583457224-aee11bad5112?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ];
 
 // Step data with Unsplash image URLs
 const steps = [
   {
     number: '01',
-    title: 'Research and Design',
-    description: 'This involves understanding your needs to create tailored solutions. We build Figma designs that combine functionality and visual appeal for an exceptional user experience.',
+    title: 'Research and Strategy',
+    description: 'We start by understanding your business and vision, crafting tailored strategies that lead to effective solutions. Whether it’s a presentation website, online store, or something more complex, we ensure that every project is built to achieve your goals and create impact.',
     imageUrl: unsplashImages[0],
   },
   {
     number: '02',
-    title: 'Domain Services',
-    description: 'We turn designs into functional websites. We build robust, scalable applications using the latest technologies, ensuring seamless performance and reliability.',
+    title: 'Domain and Infrastructure',
+    description: 'From securing domains to setting up robust hosting, we handle all aspects of getting your website live. Our team ensures seamless performance, reliability, and scalability, making sure your site runs smoothly across both web and mobile platforms.',
     imageUrl: unsplashImages[1],
   },
   {
     number: '03',
-    title: 'Fix Services',
-    description: 'In this stage we help you secure your online presence by registering and managing your domain names. We ensure your website is easily accessible and aligns with your brand.',
+    title: 'Custom Development',
+    description: 'No two projects are the same, and we specialize in building websites that meet unique needs. From simple presentation sites to feature-rich online stores or web-oriented applications, we develop high-performance solutions that are both functional and future-proof.',
     imageUrl: unsplashImages[2],
   },
   {
     number: '04',
-    title: 'Development and Support',
-    description: 'We ensure your website runs smoothly and stays up-to-date. We provide ongoing assistance, performance monitoring, and updates to keep your site secure and efficient.',
+    title: 'Ongoing Support and Growth',
+    description: 'Our services don’t end at launch. We provide continuous support and updates to help your site grow alongside your business. Whether it’s adding new features, improving performance, or ensuring security, we’re here to support your evolving needs.',
     imageUrl: unsplashImages[3],
   },
 ];
+
 
 const StepComponent: React.FC = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
