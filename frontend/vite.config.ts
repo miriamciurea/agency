@@ -8,4 +8,7 @@ export default defineConfig({
   css: {
     postcss: postcssConfig,
   },
+  build: {
+    outDir: 'dist', // Customizable output directory
+  },
 })

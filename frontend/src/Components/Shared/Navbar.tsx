@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         {/* Logo */}
         <div className={styles.logo}>
-          <a href="#" className="text-2xl font-semibold ">MoonCode</a>
+          <a href="/" className="text-2xl font-semibold ">MoonCode</a>
         </div>
 
         {/* Navigation Links: Hidden on small screens, visible on medium screens and above */}
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
           {['HOME', 'SERVICES', 'ABOUT', 'CONTACT'].map((item, index) => (
             <li key={index}>
               <a
-                href={`#${item.toLowerCase()}`}
+                href={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}
                 className={`${styles.button} px-4 py-2 rounded transition-transform duration-200 hover:text-gray-700`}
                 onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
                 onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
           {['HOME', 'SERVICES', 'ABOUT', 'CONTACT'].map((item, index) => (
             <li key={index}>
               <a
-                href={`#${item.toLowerCase()}`}
+                href={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}
                 className={`${styles.button} px-4 py-2 rounded transition-colors duration-200 hover:text-gray-700`}
                 onClick={toggleSidebar}
               >

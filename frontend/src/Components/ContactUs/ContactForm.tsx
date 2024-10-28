@@ -319,7 +319,7 @@ const ContactForm: React.FC = () => {
           Let’s develop it <span style={{ color: "var(--pink)" }}>together</span>.
         </h3>
         <div
-          style={{ backgroundImage: 'url(public/images/contactus.jpg)' }}
+          style={{ backgroundImage: 'url(/images/contactus.jpg)' }}
           className="w-full h-[150px] bg-cover bg-center md:h-[465px]"
         ></div>
       </div>

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styles from './PortfolioSection.module.css';
-import one from '../../../public/images/1.png';
-import two from '../../../public/images/2.png';
-import three from '../../../public/images/3.png';
-import four from '../../../public/images/4.png';
-import five from '../../../public/images/5.png';
-import six from '../../../public/images/6.png';
-import seven from '../../../public/images/7.png';
-import eight from '../../../public/images/8.png';
+import one from '/images/1.png';
+import two from '/images/2.png';
+import three from '/images/3.png';
+import four from '/images/4.png';
+import five from '/images/5.png';
+import six from '/images/6.png';
+import seven from '/images/7.png';
+import eight from '/images/8.png';
 
 // Use provided Unsplash URLs to create an alternating pattern
 const unsplashImages = [
