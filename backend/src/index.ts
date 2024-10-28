@@ -3,6 +3,7 @@ import cors from 'cors';
 // import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import contactRoutes from './routes/contact';
+import path from 'path';
 
 dotenv.config();
 
@@ -24,11 +25,12 @@ app.use(express.urlencoded({ extended: true }));
 //     }
 // })();
 
-app.use('/api', contactRoutes);
-
-app.get('/', (_req: Request, res: Response) => {
-    res.status(200).send('Server is running');
+app.use(express.static(path.join(__dirname, '../../frontend/dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../frontend/dist/index.html', 'index.html'));
 });
+
+app.use('/api', contactRoutes);
 
 const PORT: string | number = process.env.PORT || 3000;
 
