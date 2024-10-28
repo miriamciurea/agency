@@ -74,10 +74,10 @@ const Footer1: React.FC = () => {
               Overview
             </div>
 
-            <div className="link">About Us</div>
-            <div className="link">Home</div>
-            <div className="link">Services</div>
-            <div className="link">Contact Us</div>
+            <div className="link"><a href="/about">About Us</a></div>
+            <div className="link"><a href="/">Home</a></div>
+            <div className="link"><a href="/">Services</a></div>
+            <div className="link"><a href="/contact">Contact Us</a></div>
 
           </div>
 
@@ -104,7 +104,7 @@ const Footer1: React.FC = () => {
             </div>
 
             <div className="text">
-              Here is a helpfull <a href="/contact">link</a>.
+              Here is a helpful <a href="/contact" className='underline'>link.</a>
             </div>
 
             </div>

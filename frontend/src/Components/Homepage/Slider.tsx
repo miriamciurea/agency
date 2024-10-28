@@ -3,11 +3,11 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const Slider: React.FC = () => {
   const items = [
-    { text: "DESIGN", img: "public/images/1.png" },
-    { text: "DEVELOP", img: "public/images/2.png" },
-    { text: "DEPLOY", img: "public/images/3.png" },
-    { text: "TRANSFORM", img: "public/images/4.png" },
-    { text: "MANAGE", img: "public/images/5.png" },
+    { text: "DESIGN", img: "/images/1.png" },
+    { text: "DEVELOP", img: "/images/2.png" },
+    { text: "DEPLOY", img: "/images/3.png" },
+    { text: "TRANSFORM", img: "/images/4.png" },
+    { text: "MANAGE", img: "/images/5.png" },
   ];
 
   // Duplicate the items for seamless looping
