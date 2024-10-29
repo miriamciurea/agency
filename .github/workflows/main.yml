@@ -5,13 +5,11 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
   workflow_dispatch:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # GitHub Actions runner, not the Amazon Linux instance
 
     if: github.ref == 'refs/heads/main'
 
@@ -22,20 +20,34 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: pm2 stop index
-      - run: npm run delete-modules
-      - run: npm run delete-dist
-      - run: npm run install-frontend
-      - run: npm run install-backend
-      - run: npm run build
-      - run: pm2 start index
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
-      - name: rsync deployments
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run delete-modules
+          npm run delete-dist
+          npm run install-frontend
+          npm run install-backend
+          npm run build
+
+      - name: Stop existing PM2 process (if any) on Amazon Linux
+        run: |
+          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ec2-user@3.127.230.197 "pm2 stop index || true"
+
+      - name: Deploy to Amazon Linux using rsync
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
           path: ./*
           remote_path: /var/www/my-app/
-          remote_host: 3.127.230.197.compute.amazonaws.com
+          remote_host: 3.127.230.197
           remote_user: ec2-user
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: Start PM2 process on Amazon Linux
+        run: |
+          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ec2-user@3.127.230.197 "cd /var/www/my-app && pm2 start index --update-env"
