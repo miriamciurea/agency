@@ -5,6 +5,10 @@
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && tsc",
     "build": "npm run build:frontend && npm run build:backend",
+    "delete-dist": "rm -r frontend/dist && rm -r backend/dist",
+    "delete-modules": "rm -r frontend/node_modules && rm -r backend/node_modules",
+    "install-frontend": "cd frontend && npm i",
+    "install-backend": "cd backend && npm i",
     "start": "node backend/dist/index.js"
   },
   "dependencies": {
