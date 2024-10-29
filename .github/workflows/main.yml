@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to EC2
         env:
-          HOST: "ec2-user@<your-ec2-ip-address>"
+          HOST: "ec2-user@3.127.230.197"
         run: |
           ssh -o StrictHostKeyChecking=no $HOST << 'EOF'
             # Navigate to the specified directory
