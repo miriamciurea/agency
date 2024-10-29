@@ -188,7 +188,7 @@ const ContactForm: React.FC = () => {
 
     if (!formErrors.name && !formErrors.email && !formErrors.phone) {
       try {
-        const response = await fetch(`http://localhost:3000/api/contact`, {
+        const response = await fetch(`/api/contact`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
