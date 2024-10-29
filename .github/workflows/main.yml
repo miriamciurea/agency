@@ -34,7 +34,8 @@ jobs:
 
       - name: Stop existing PM2 process (if any) on Amazon Linux
         run: |
-          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ec2-user@3.127.230.197 "pm2 stop index || true"
+          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" -o StrictHostKeyChecking=no ec2-user@3.127.230.197 "pm2 stop index || true"
+
 
       - name: Deploy to Amazon Linux using rsync
         uses: burnett01/rsync-deployments@5.1
@@ -48,4 +49,4 @@ jobs:
 
       - name: Start PM2 process on Amazon Linux
         run: |
-          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ec2-user@3.127.230.197 "cd /var/www/my-app && pm2 start index --update-env"
+          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" -o StrictHostKeyChecking=no ec2-user@3.127.230.197 "pm2 start index || true"
