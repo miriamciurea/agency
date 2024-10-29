@@ -1,52 +1,38 @@
-name: CI
+name: Deploy to EC2
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # GitHub Actions runner, not the Amazon Linux instance
-
-    if: github.ref == 'refs/heads/main'
-
-    strategy:
-      matrix:
-        node-version: [18.x]
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Set up SSH Agent
+        uses: webfactory/ssh-agent@v0.5.3
         with:
-          node-version: ${{ matrix.node-version }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install dependencies and build
+      - name: Deploy to EC2
+        env:
+          HOST: "ec2-user@<your-ec2-ip-address>"
         run: |
-          npm install
-          npm run install-frontend
-          npm run install-backend
-          npm run build
+          ssh -o StrictHostKeyChecking=no $HOST << 'EOF'
+            # Navigate to the specified directory
+            cd /home/ec2-user/agency
 
-      - name: Stop existing PM2 process (if any) on Amazon Linux
-        run: |
-          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" -o StrictHostKeyChecking=no ec2-user@3.127.230.197 "pm2 stop index || true"
+            # Pull the latest code or perform other tasks
+            git pull origin main
 
+            # Install dependencies and build the project
+            npm install
+            npm run build
 
-      - name: Deploy to Amazon Linux using rsync
-        uses: burnett01/rsync-deployments@5.1
-        with:
-          switches: -avzr --delete
-          path: ./*
-          remote_path: /home/ec2-user/agency
-          remote_host: 3.127.230.197
-          remote_user: ec2-user
-          remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
-
-      - name: Start PM2 process on Amazon Linux
-        run: |
-          ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" -o StrictHostKeyChecking=no ec2-user@3.127.230.197 "pm2 start index || true"
+            # Restart the application with PM2
+            pm2 restart index || pm2 start index
+          EOF
