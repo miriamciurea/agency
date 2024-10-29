@@ -1,4 +1,4 @@
-import Hero from '../Components/Homepage/Hero';
+// import Hero from '../Components/Homepage/Hero';
 import Slider from "../Components/Homepage/Slider";
 import Statement from "../Components/Homepage/Statement";
 import What from "../Components/Homepage/WhatWeDo";
@@ -10,7 +10,7 @@ import Companies from "../Components/Homepage/CompaniesSection";
 const HomePage = () => {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <Slider />
       <Statement />
       <What />
