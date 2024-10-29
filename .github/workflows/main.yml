@@ -28,8 +28,6 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm install
-          npm run delete-modules
-          npm run delete-dist
           npm run install-frontend
           npm run install-backend
           npm run build
