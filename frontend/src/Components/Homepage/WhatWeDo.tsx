@@ -3,13 +3,13 @@ import styles from "./WhatWeDo.module.css";
 
 const imageMapping = {
   "Research & Design":
-    "https://images.unsplash.com/photo-1674027326254-88c960d8e561?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "Development":
-    "https://images.unsplash.com/photo-1674027001840-1a3e834eb73f?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "Domain Services":
-    "https://plus.unsplash.com/premium_photo-1661600114108-3179188e1ab3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-",
+    "https://images.unsplash.com/photo-1483817101829-339b08e8d83f?q=80&w=2904&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "Maintenance&Support":
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlJTIwY29kaW5nfGVufDB8MHwwfHx8Mg%3D%3D",
 };
 
 const descriptions = {
@@ -44,11 +44,12 @@ const WhatWeDo: React.FC = () => {
   };
 
   return (
-    <div className={styles.whatWeDoContainer}>
+    <div className={`${styles.whatWeDoContainer} cursor-none`}>
       <div className={styles.textSection}>
         <h1 className={styles.sectionTitle}>WHAT WE DO</h1>
         <ul className={styles.serviceList}>
           {Object.keys(imageMapping).map((item) => (
+            <a href="/services" style = {{cursor: "none"}}>
             <li
               key={item}
               className={styles.serviceItem}
@@ -61,6 +62,7 @@ const WhatWeDo: React.FC = () => {
                 {descriptions[item as keyof typeof descriptions]}
               </span>
             </li>
+            </a>
           ))}
         </ul>
       </div>

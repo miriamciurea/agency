@@ -31,7 +31,7 @@ const CompaniesSection: React.FC = () => {
       <a href="https://www.dnnovationconstruction.co.uk" target="_blank" rel="noopener noreferrer"
       className="transform transition-transform duration-300 hover:scale-110 hover:opacity-80">
         <div
-          className="w-[65px] h-[100px] md:w-[100px] bg-no-repeat bg-center bg-contain"
+          className="w-[65px] h-[100px] md:w-[100px] bg-no-repeat bg-center bg-contain bg-black bg-opacity-10 rounded-full"
           style={{
             backgroundImage: `url(${dnnLogo})`
           }}

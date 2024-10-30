@@ -19,26 +19,27 @@ const Footer1: React.FC = () => {
     text-white
     bg-grey
     "
-
-    // background: 'radial-gradient(circle, rgba(2,0,36,1) 40%, rgba(9,9,121,1) 76%, rgba(0,106,255,1) 100%)'
     >
 
       <div className="
-      text-[4rem] md:text-[8rem]
+      text-[4rem] md:text-[5rem]
       font-crazy
       flex
       flex-col
       justify-center
       ">
+        <a href="/contact">
 
-        GET IN <br />
-        <div className="
-        flex
-        items-center">
-          <img src={halfMoon} alt="Half Moon" className="w-[80px] h-[80px]
-          md:w-[150px] md:h-[150px]" />
-          TOUCH
-        </div>
+          GET IN <br />
+          <div className="
+          flex
+          items-center">
+            <img src={halfMoon} alt="Half Moon" className="w-[80px] h-[80px]
+            md:w-[100px] md:h-[100px]" />
+            TOUCH
+          </div>
+
+        </a>
 
       </div>
 

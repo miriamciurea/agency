@@ -74,15 +74,12 @@ const PortfolioSection: React.FC = () => {
 
   return (
     <div className={styles.portfolioSectionContainer}>
-      {/* <h1 className={`${styles.portfolioTitle} sectionTitle`}>more work button</h1>
-       */}
-
       <div className="flex justify-center">
         <div className={styles.button}
           onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
           onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
           >
-          MORE WORK
+          <a href="/services">MORE WORK</a>
         </div>
       </div>
 

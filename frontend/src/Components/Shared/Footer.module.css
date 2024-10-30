@@ -1,7 +1,7 @@
 /* Footer.module.css */
 
 .footer {
-  background-color: #1e1e1e;
+  background-color: var(--grey);
   /* Dark background for contrast */
   color: #ffffff;
   /* Light text for readability */
