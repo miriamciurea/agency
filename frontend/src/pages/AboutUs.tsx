@@ -1,7 +1,8 @@
 import HeroAbout from '../Components/AboutUs/HeroAbout';
-import StepComponent from '../Components/AboutUs/Journey';
 import MeetTheTeam from '../Components/AboutUs/MeetTheTeam';
 import SliderAbout from '../Components/AboutUs/SliderAbout';
+import StoryLine from '../Components/AboutUs/StoryLine';
+import MissionStatement from '../Components/AboutUs/MissionStatement';
 import { useRef } from 'react';
 
 const AboutUs: React.FC = () => {
@@ -11,8 +12,9 @@ const AboutUs: React.FC = () => {
     <>
       <HeroAbout meetTheTeamRef={meetTheTeamRef} /> {/* Pass ref to HeroAbout */}
       <SliderAbout />
-      <StepComponent />
       <div ref={meetTheTeamRef}> {/* Attach the ref to this div wrapping MeetTheTeam */}
+        <MissionStatement />
+        <StoryLine />
         <MeetTheTeam />
       </div>
       {/* <History  /> */}
