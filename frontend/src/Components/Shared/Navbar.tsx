@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
 
         {/* Navigation Links: Hidden on small screens, visible on medium screens and above */}
         <ul className={`${styles.navLinks} hidden md:flex space-x-6`}>
-          {['HOME', 'SERVICES', 'ABOUT', 'CONTACT'].map((item, index) => (
+          {['HOME', 'ABOUT','SERVICES', 'CONTACT'].map((item, index) => (
             <li key={index}>
               <a
                 href={item === 'HOME' ? '/' : `/${item.toLowerCase()}`}

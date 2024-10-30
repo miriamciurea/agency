@@ -17,7 +17,7 @@ const HeroAbout = ({ meetTheTeamRef }: { meetTheTeamRef: React.RefObject<HTMLDiv
 
   return (
     <section ref={containerRef} className="p-[7%] gap-[20%]
-                                          grid md:grid-cols-[1fr_2fr] items-center md:p-[2%] md:mt-[15%] md:gap-0">
+                                          grid md:grid-cols-[1fr_2fr] items-center md:p-[2%] md:mt-[5%] md:gap-0">
       <div className="flex flex-col gap-[20px]
                       md:h-[100%] md:w-[100%] md:justify-end animate__animated animate__fadeInLeft">
         <div className="md:pr-[20%] md:text-[1.3rem]">

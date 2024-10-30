@@ -5,6 +5,7 @@ import ContactPage from './pages/ContactPage';
 import Navbar from "../src/Components/Shared/Navbar";
 import Footer1 from "../src/Components/Shared/Footer1";
 import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
 // import AboutPage from './pages/AboutPage';
 // import NotFoundPage from './pages/NotFoundPage';
 
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/services" element={<Services />} />
 
         {/* <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} /> */}
