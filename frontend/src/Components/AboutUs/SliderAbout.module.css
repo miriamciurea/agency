@@ -31,7 +31,6 @@
   grid-template-columns: auto auto;
   justify-content: center;
   align-items: center;
-  font-size: 17rem;
   font-weight: 900;
   gap: 20px;
 }

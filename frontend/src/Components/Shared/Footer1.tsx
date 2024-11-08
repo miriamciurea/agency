@@ -14,7 +14,7 @@ const Footer1: React.FC = () => {
     md:grid-cols-[2fr_1fr]
     gap-[15px]
     grid-flow-row-reverse md:grid-flow-row
-    pl-[3%] pr-[3%] pt-[17%]
+    pl-[10%] pr-[10%] pt-[17%]
     pb-[17%] md:pb-[3%] md:pt-[3%]
     text-white
     bg-grey
@@ -22,8 +22,8 @@ const Footer1: React.FC = () => {
     >
 
       <div className="
-      text-[4rem] md:text-[5rem]
-      font-crazy
+      text-[4rem] md:text-[6rem]
+      font-[600] md:font-[700]
       flex
       flex-col
       justify-center
@@ -31,12 +31,15 @@ const Footer1: React.FC = () => {
         <a href="/contact">
 
           GET IN <br />
-          <div className="
-          flex
-          items-center">
-            <img src={halfMoon} alt="Half Moon" className="w-[80px] h-[80px]
-            md:w-[100px] md:h-[100px]" />
-            TOUCH
+          <div className="flex">
+            TOU
+            <span className="
+            flex
+            items-center">
+              <img src={halfMoon} alt="Half Moon" className="w-[45px] h-[80px]
+              md:w-[110px] md:h-[100px]" />
+              H
+            </span>
           </div>
 
         </a>
@@ -77,7 +80,7 @@ const Footer1: React.FC = () => {
 
             <div className="link"><a href="/about">About Us</a></div>
             <div className="link"><a href="/">Home</a></div>
-            <div className="link"><a href="/">Services</a></div>
+            <div className="link"><a href="/services">Services</a></div>
             <div className="link"><a href="/contact">Contact Us</a></div>
 
           </div>

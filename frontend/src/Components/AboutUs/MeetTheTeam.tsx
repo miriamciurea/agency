@@ -61,14 +61,13 @@ const MeetTheTeam: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16" style={{ backgroundColor: '#EDEDED' }}>
       {/* Title */}
       <motion.h2
-        className="text-7xl font-light mb-6 text-center"
+        className="text-[3rem] text-center"
         style={{
-          fontFamily: 'Orbitron',
           color: '#333',
           y: yPosAnim,
         }}
       >
-        Meet the Team
+        MEET THE TEAM
       </motion.h2>
 
 
