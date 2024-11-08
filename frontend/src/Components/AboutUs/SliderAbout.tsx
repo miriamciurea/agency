@@ -49,7 +49,7 @@ const AboutSlider: React.FC = () => {
   return (
     <div className={`${styles.sliderContainer} animate__animated animate__fadeInUp`}>
       <div className={styles.highwayBarrier}>
-        <motion.ul ref={sliderRef} className={`${styles.highwayLane} text-[11rem] md:[17rem]`} style={{ x: baseX }}>
+        <motion.ul ref={sliderRef} className={`${styles.highwayLane} text-[11rem] md:text-[17rem]`} style={{ x: baseX }}>
           {items.map((item, index) => (
             <li key={index} className={styles.highwayCar}>
               <div
