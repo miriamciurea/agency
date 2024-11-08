@@ -37,7 +37,8 @@ const StepComponent: React.FC = () => {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center" style={{ backgroundColor: '#EDEDED' }}>
       <h1 className="text-center text-4xl font-bold mb-12 z-10">
-        Our Website Creation Process
+        {/* Our Website Creation Process */}
+        OUR WEBSITE CREATION PROCESS
       </h1>
 
       {/* Floating Shapes for the Background */}

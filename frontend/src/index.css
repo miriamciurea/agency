@@ -6,11 +6,18 @@
 @import 'animate.css';
 
 :root {
-  --blue: #A1C6EA;
+  /* --blue: #A1C6EA; */
+  --blue: #b34448;
   --bg: #EDEDED;
-  --pink: #FF6B6B;
+  /* --pink: #FF6B6B; */
+  --pink: #b34448;
   /* --grey: #3A3A3A; */
-  --grey: #1c1d20;
+  /* --grey: #1c1d20; */
+  /* #262626 */
+  --section: #c8c1b2;
+  /* --yellow: #e7e4da; */
+  --yellow: #e7e4da;
+  --grey: #262626;
   --crazy: 'Libre Baskerville';
   --normal: 'Afacad Flux';
 

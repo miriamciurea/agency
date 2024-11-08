@@ -54,16 +54,16 @@ const StepComponent: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center" style={{ backgroundColor: '#EDEDED' }}>
-      <h1 className="text-center text-4xl font-bold mb-12 z-100 pt-9">
-        Our Website Creation Process
+    <div className="relative min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <h1 className="text-center text-4xl font-[300] mb-12 z-100 pt-9">
+      OUR WEBSITE CREATION PROCESS
       </h1>
 
       {/* Steps */}
       {steps.map((step, index) => (
         <motion.div
           key={index}
-          className="step-container flex flex-col md:flex-row w-full max-w-7xl mb-16 shadow-lg p-8 relative group z-10"
+          className="step-container flex flex-col md:flex-row w-full max-w-7xl mb-16 shadow-lg p-8 relative group z-10 bg-white"
           style={{ backgroundColor: '#EDEDED' }}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,8 +79,8 @@ const StepComponent: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="text-3xl font-bold text-gray-400">{step.number}</span>
-            <h2 className="text-2xl font-semibold text-gray-800 mt-4 mb-4">{step.title}</h2>
+            <span className="text-3xl font-bold font-crazy">{step.number}</span>
+            <h2 className="mt-4 mb-4 text-[2rem] uppercase font-normal text-[var(--pink)]">{step.title}</h2>
             <p className="text-gray-600">{step.description}</p>
           </motion.div>
 
